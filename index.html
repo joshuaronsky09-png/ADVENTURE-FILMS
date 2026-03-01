@@ -1,0 +1,1114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;Adventure Films — Productora Audiovisual&lt;/title&gt;</p>
+<p class="p1">&lt;link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&amp;family=Space+Mono:wght@400;700&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">:root {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--brown: #3D1F0D;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--brown-mid: #5C2F14;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--beige: #F5EDD6;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--black: #060402;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--dark: #0C0703;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--mid: #160C06;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--red: #B8341C;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--beige-dim: rgba(245,237,214,0.55);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--beige-faint: rgba(245,237,214,0.07);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--trans: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">*{margin:0;padding:0;box-sizing:border-box;}</p>
+<p class="p1">html{scroll-behavior:smooth;}</p>
+<p class="p2"><br></p>
+<p class="p1">body {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--black);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--beige);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family: 'Space Mono', monospace;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow-x: hidden;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* GRAIN */</p>
+<p class="p1">body::after {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>content:'';position:fixed;inset:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>opacity:0.032;pointer-events:none;z-index:9990;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* CURSOR */</p>
+<p class="p1">.cursor{position:fixed;width:10px;height:10px;background:var(--beige);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:difference;}</p>
+<p class="p1">.cursor.big{width:44px;height:44px;}</p>
+<p class="p2"><br></p>
+<p class="p1">/* NAV */</p>
+<p class="p1">nav {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:fixed;top:0;left:0;right:0;z-index:1000;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;align-items:center;justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:24px 48px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(to bottom,rgba(6,4,2,0.96) 0%,transparent 100%);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: var(--trans);</p>
+<p class="p1">}</p>
+<p class="p1">.nav-left,.nav-right{display:flex;gap:36px;}</p>
+<p class="p1">.nav-left a,.nav-right a{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:10px;letter-spacing:.18em;text-transform:uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--beige-dim);text-decoration:none;transition:color .3s;</p>
+<p class="p1">}</p>
+<p class="p1">.nav-left a:hover,.nav-right a:hover,.nav-left a.active{color:var(--beige);}</p>
+<p class="p1">.nav-logo{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue',cursive;font-size:20px;letter-spacing:.25em;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--beige);text-decoration:none;</p>
+<p class="p1">}</p>
+<p class="p1">.nav-cta{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:var(--brown)!important;color:var(--beige)!important;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:9px 20px;border:1px solid var(--brown);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:background .3s,color .3s!important;</p>
+<p class="p1">}</p>
+<p class="p1">.nav-cta:hover{background:var(--beige)!important;color:var(--brown)!important;}</p>
+<p class="p2"><br></p>
+<p class="p1">/* PAGE SYSTEM */</p>
+<p class="p1">.page{display:none;min-height:100vh;}</p>
+<p class="p1">.page.active{display:block;}</p>
+<p class="p2"><br></p>
+<p class="p1">/* =================== HOME =================== */</p>
+<p class="p1">#home{display:block;}</p>
+<p class="p2"><br></p>
+<p class="p1">/* HERO */</p>
+<p class="p1">.hero{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height:100vh;position:relative;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;align-items:flex-end;padding:80px 48px;overflow:hidden;</p>
+<p class="p1">}</p>
+<p class="p1">.hero-bg{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;inset:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:radial-gradient(ellipse at 65% 35%,#2A1008 0%,#0C0703 55%,var(--black) 100%);</p>
+<p class="p1">}</p>
+<p class="p1">.hero-scanlines{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;inset:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(245,237,214,.012) 3px,rgba(245,237,214,.012) 4px);</p>
+<p class="p1">}</p>
+<p class="p1">.hero-frame{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;right:6%;top:50%;transform:translateY(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width:400px;height:540px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid rgba(245,237,214,.07);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(160deg,rgba(61,31,13,.5),rgba(12,7,3,.9));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;align-items:center;justify-content:center;overflow:hidden;</p>
+<p class="p1">}</p>
+<p class="p1">.hero-frame-inner{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue',cursive;font-size:90px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:rgba(245,237,214,.04);letter-spacing:.1em;text-align:center;</p>
+<p class="p1">}</p>
+<p class="p1">.hero-frame::before{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>content:'';position:absolute;inset:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:repeating-linear-gradient(90deg,transparent 0px,transparent 2px,rgba(245,237,214,.015) 2px,rgba(245,237,214,.015) 3px);</p>
+<p class="p1">}</p>
+<p class="p1">.hero-content{position:relative;z-index:2;max-width:52%;}</p>
+<p class="p1">.hero-tag{font-size:10px;letter-spacing:.25em;color:var(--red);margin-bottom:18px;}</p>
+<p class="p1">.hero-title{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue',cursive;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:clamp(72px,11vw,148px);line-height:.88;letter-spacing:.02em;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--beige);margin-bottom:28px;</p>
+<p class="p1">}</p>
+<p class="p1">.hero-sub{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:11px;line-height:1.9;color:var(--beige-dim);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-width:380px;margin-bottom:44px;letter-spacing:.05em;</p>
+<p class="p1">}</p>
+<p class="p1">.hero-actions{display:flex;gap:24px;align-items:center;}</p>
+<p class="p1">.btn-primary{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:inline-flex;align-items:center;gap:10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:var(--beige);color:var(--brown);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:14px 28px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-decoration:none;font-family:'Space Mono',monospace;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:var(--trans);cursor:none;</p>
+<p class="p1">}</p>
+<p class="p1">.btn-primary:hover{background:var(--brown);color:var(--beige);gap:18px;}</p>
+<p class="p1">.btn-ghost{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:inline-flex;align-items:center;gap:10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--beige-dim);font-size:10px;letter-spacing:.2em;text-transform:uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-decoration:none;border-bottom:1px solid rgba(245,237,214,.25);padding-bottom:6px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:var(--trans);cursor:none;</p>
+<p class="p1">}</p>
+<p class="p1">.btn-ghost:hover{color:var(--beige);gap:16px;border-color:var(--beige);}</p>
+<p class="p1">.btn-ghost::after,.btn-primary::after{content:'→';}</p>
+<p class="p1">.hero-scroll{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;bottom:36px;right:48px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:9px;letter-spacing:.25em;color:rgba(245,237,214,.25);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>writing-mode:vertical-rl;display:flex;align-items:center;gap:14px;</p>
+<p class="p1">}</p>
+<p class="p1">.hero-scroll::before{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>content:'';width:1px;height:52px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(to bottom,transparent,rgba(245,237,214,.3));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>animation:scrollPulse 2s ease-in-out infinite;</p>
+<p class="p1">}</p>
+<p class="p1">@keyframes scrollPulse{0%,100%{opacity:.3;}50%{opacity:1;}}</p>
+<p class="p2"><br></p>
+<p class="p1">/* SERVICES OVERVIEW - HOME */</p>
+<p class="p1">.services-overview{padding:100px 48px;background:var(--dark);}</p>
+<p class="p1">.so-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:64px;}</p>
+<p class="p1">.so-card{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:var(--mid);padding:48px 36px;position:relative;overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor:none;transition:background .4s;</p>
+<p class="p1">}</p>
+<p class="p1">.so-card:hover{background:var(--brown);}</p>
+<p class="p1">.so-num{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue',cursive;font-size:80px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:rgba(245,237,214,.04);position:absolute;top:16px;right:24px;line-height:1;</p>
+<p class="p1">}</p>
+<p class="p1">.so-icon{font-size:28px;margin-bottom:20px;}</p>
+<p class="p1">.so-title{font-family:'Bebas Neue',cursive;font-size:30px;letter-spacing:.05em;color:var(--beige);margin-bottom:14px;}</p>
+<p class="p1">.so-desc{font-size:11px;line-height:1.9;color:var(--beige-dim);letter-spacing:.04em;}</p>
+<p class="p1">.so-link{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:inline-flex;align-items:center;gap:8px;margin-top:20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:9px;letter-spacing:.2em;color:var(--red);text-decoration:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:gap .3s;cursor:none;</p>
+<p class="p1">}</p>
+<p class="p1">.so-link:hover{gap:14px;}</p>
+<p class="p1">.so-link::after{content:'→';}</p>
+<p class="p2"><br></p>
+<p class="p1">/* =================== AGENCIA =================== */</p>
+<p class="p1">#agencia{background:var(--black);}</p>
+<p class="p2"><br></p>
+<p class="p1">.page-hero{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height:60vh;position:relative;display:flex;align-items:flex-end;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:60px 48px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(135deg,var(--black) 0%,var(--mid) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-bottom:1px solid var(--beige-faint);</p>
+<p class="p1">}</p>
+<p class="p1">.page-hero-label{font-size:10px;letter-spacing:.25em;color:var(--red);margin-bottom:14px;}</p>
+<p class="p1">.page-hero-title{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue',cursive;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:clamp(60px,9vw,120px);line-height:.9;color:var(--beige);</p>
+<p class="p1">}</p>
+<p class="p1">.page-hero-sub{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;bottom:60px;right:48px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:11px;line-height:2;color:var(--beige-dim);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-width:340px;text-align:right;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* CATEGORIES */</p>
+<p class="p1">.cat-nav{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;gap:0;border-bottom:1px solid var(--beige-faint);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:sticky;top:72px;z-index:100;background:var(--black);</p>
+<p class="p1">}</p>
+<p class="p1">.cat-btn{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:16px 28px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--beige-dim);background:none;border:none;cursor:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:color .3s;border-bottom:2px solid transparent;margin-bottom:-1px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Space Mono',monospace;</p>
+<p class="p1">}</p>
+<p class="p1">.cat-btn:hover{color:var(--beige);}</p>
+<p class="p1">.cat-btn.active{color:var(--beige);border-bottom-color:var(--beige);}</p>
+<p class="p2"><br></p>
+<p class="p1">.cat-section{display:none;padding:80px 48px;}</p>
+<p class="p1">.cat-section.active{display:block;}</p>
+<p class="p2"><br></p>
+<p class="p1">/* PROJECT GRID */</p>
+<p class="p1">.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}</p>
+<p class="p1">.proj-grid.col2{grid-template-columns:repeat(2,1fr);}</p>
+<p class="p1">.proj-card{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:relative;overflow:hidden;cursor:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:var(--mid);aspect-ratio:4/3;</p>
+<p class="p1">}</p>
+<p class="p1">.proj-card.wide{grid-column:span 2;aspect-ratio:16/9;}</p>
+<p class="p1">.proj-card.tall{aspect-ratio:3/4;}</p>
+<p class="p1">.proj-thumb{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width:100%;height:100%;object-fit:cover;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>filter:brightness(.45) sepia(.3);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:filter .7s ease,transform .8s cubic-bezier(.25,.46,.45,.94);display:block;</p>
+<p class="p1">}</p>
+<p class="p1">.proj-card:hover .proj-thumb{filter:brightness(.65) sepia(.1);transform:scale(1.04);}</p>
+<p class="p1">.proj-placeholder{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width:100%;height:100%;display:flex;align-items:center;justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:48px;opacity:.08;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition:opacity .4s,transform .8s cubic-bezier(.25,.46,.45,.94);</p>
+<p class="p1">}</p>
+<p class="p1">.proj-card:hover .proj-placeholder{opacity:.14;transform:scale(1.04);}</p>
+<p class="p1">.proj-info{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;inset:0;background:linear-gradient(to top,rgba(6,4,2,.92) 0%,transparent 50%);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;flex-direction:column;justify-content:flex-end;padding:24px;</p>
+<p class="p1">}</p>
+<p class="p1">.proj-name{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue',cursive;font-size:26px;letter-spacing:.08em;color:var(--beige);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateY(6px);transition:transform .4s ease;</p>
+<p class="p1">}</p>
+<p class="p1">.proj-card:hover .proj-name{transform:translateY(0);}</p>
+<p class="p1">.proj-type{font-size:9px;letter-spacing:.2em;color:var(--beige-dim);margin-top:4px;opacity:0;transition:opacity .4s .1s;}</p>
+<p class="p1">.proj-card:hover .proj-type{opacity:1;}</p>
+<p class="p1">.proj-cta{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;top:16px;right:16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(6,4,2,.7);border:1px solid rgba(245,237,214,.15);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--beige);font-size:9px;letter-spacing:.15em;padding:8px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>opacity:0;transition:opacity .3s;cursor:none;text-decoration:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Space Mono',monospace;</p>
+<p class="p1">}</p>
+<p class="p1">.proj-card:hover .proj-cta{opacity:1;}</p>
+<p class="p2"><br></p>
+<p class="p1">/* UPLOAD ZONE */</p>
+<p class="p1">.upload-zone{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px dashed rgba(245,237,214,.15);padding:48px;text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top:24px;transition:border-color .3s;cursor:none;</p>
+<p class="p1">}</p>
+<p class="p1">.upload-zone:hover{border-color:rgba(245,237,214,.35);}</p>
+<p class="p1">.upload-zone p{font-size:11px;color:var(--beige-dim);letter-spacing:.1em;margin-top:8px;}</p>
+<p class="p1">.upload-zone .uz-icon{font-size:32px;opacity:.3;margin-bottom:12px;}</p>
+<p class="p1">.upload-btn{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:inline-block;margin-top:16px;padding:10px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:var(--brown);color:var(--beige);font-size:9px;letter-spacing:.2em;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-transform:uppercase;font-family:'Space Mono',monospace;cursor:pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:none;transition:background .3s;</p>
+<p class="p1">}</p>
+<p class="p1">.upload-btn:hover{background:var(--brown-mid);}</p>
+<p class="p2"><br></p>
+<p class="p1">/* =================== PROJECT DETAIL =================== */</p>
+<p class="p1">#project-detail{background:var(--black);display:none;}</p>
+<p class="p1">#project-detail.active{display:block;}</p>
+<p class="p2"><br></p>
+<p class="p1">.pd-hero{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:140px 48px 60px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(180deg,var(--mid) 0%,var(--black) 100%);</p>
+<p class="p1">}</p>
+<p class="p1">.pd-tag{font-size:10px;letter-spacing:.25em;color:var(--red);margin-bottom:16px;}</p>
+<p class="p1">.pd-title{font-family:'Bebas Neue',cursive;font-size:clamp(56px,9vw,110px);color:var(--beige);line-height:.9;margin-bottom:48px;}</p>
+<p class="p1">.pd-meta{display:flex;gap:80px;}</p>
+<p class="p1">.pd-meta-item{}</p>
+<p class="p1">.pd-meta-label{font-size:9px;letter-spacing:.25em;color:rgba(245,237,214,.3);margin-bottom:6px;}</p>
+<p class="p1">.pd-meta-value{font-size:12px;letter-spacing:.1em;color:var(--beige);}</p>
+<p class="p2"><br></p>
+<p class="p1">/* HORIZONTAL SCROLL GALLERY */</p>
+<p class="p1">.pd-gallery{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:0;overflow-x:auto;display:flex;gap:3px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>scrollbar-width:thin;scrollbar-color:var(--brown) transparent;</p>
+<p class="p1">}</p>
+<p class="p1">.pd-gallery::-webkit-scrollbar{height:3px;}</p>
+<p class="p1">.pd-gallery::-webkit-scrollbar-thumb{background:var(--brown);}</p>
+<p class="p1">.pd-gallery-item{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex:0 0 auto;height:480px;width:740px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:var(--mid);position:relative;overflow:hidden;</p>
+<p class="p1">}</p>
+<p class="p1">.pd-gallery-item:first-child{width:920px;}</p>
+<p class="p1">.pd-gallery-img{width:100%;height:100%;object-fit:cover;filter:brightness(.6);}</p>
+<p class="p1">.pd-gallery-placeholder{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width:100%;height:100%;display:flex;align-items:center;justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:80px;opacity:.06;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* APPROACH */</p>
+<p class="p1">.pd-approach{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:100px 48px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:radial-gradient(ellipse at 30% 50%,rgba(61,31,13,.5) 0%,var(--black) 60%);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align:center;</p>
+<p class="p1">}</p>
+<p class="p1">.pd-approach h3{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue',cursive;font-size:clamp(36px,5vw,60px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--beige);margin-bottom:48px;letter-spacing:.03em;</p>
+<p class="p1">}</p>
+<p class="p1">.pd-approach-text{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:12px;line-height:2.2;color:var(--beige-dim);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-width:680px;margin:0 auto 40px;letter-spacing:.05em;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* OTHER WORKS - TILTED CARDS */</p>
+<p class="p1">.other-works{padding:100px 48px;background:var(--dark);text-align:center;}</p>
+<p class="p1">.other-works h3{font-family:'Bebas Neue',cursive;font-size:48px;color:var(--beige);margin-bottom:80px;letter-spacing:.05em;}</p>
+<p class="p1">.ow-grid{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}</p>
+<p class="p1">.ow-card{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width:320px;height:240px;border-radius:16px;overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:relative;cursor:none;transition:transform .5s cubic-bezier(.25,.46,.45,.94),box-shadow .5s;</p>
+<p class="p1">}</p>
+<p class="p1">.ow-card:nth-child(odd){transform:rotate(-3deg);}</p>
+<p class="p1">.ow-card:nth-child(even){transform:rotate(3deg);}</p>
+<p class="p1">.ow-card:hover{transform:rotate(0deg) scale(1.05);box-shadow:0 40px 80px rgba(0,0,0,.6);}</p>
+<p class="p1">.ow-thumb{width:100%;height:100%;object-fit:cover;filter:brightness(.55);}</p>
+<p class="p1">.ow-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px;opacity:.15;}</p>
+<p class="p1">.ow-label{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;bottom:16px;left:20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue',cursive;font-size:20px;letter-spacing:.1em;color:var(--beige);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* =================== BTS =================== */</p>
+<p class="p1">#bts-page{background:var(--black);}</p>
+<p class="p1">.bts-grid{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:120px 48px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:grid;grid-template-columns:repeat(12,1fr);gap:4px;</p>
+<p class="p1">}</p>
+<p class="p1">.bts-item{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:relative;overflow:hidden;background:var(--mid);cursor:none;</p>
+<p class="p1">}</p>
+<p class="p1">.bts-item:nth-child(1){grid-column:span 8;aspect-ratio:16/9;}</p>
+<p class="p1">.bts-item:nth-child(2){grid-column:span 4;aspect-ratio:9/16;}</p>
+<p class="p1">.bts-item:nth-child(3){grid-column:span 4;aspect-ratio:4/3;}</p>
+<p class="p1">.bts-item:nth-child(4){grid-column:span 4;aspect-ratio:4/3;}</p>
+<p class="p1">.bts-item:nth-child(5){grid-column:span 4;aspect-ratio:4/3;}</p>
+<p class="p1">.bts-item:nth-child(6){grid-column:span 6;aspect-ratio:16/9;}</p>
+<p class="p1">.bts-item:nth-child(7){grid-column:span 6;aspect-ratio:16/9;}</p>
+<p class="p1">.bts-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:52px;opacity:.06;transition:opacity .4s,transform .7s;}</p>
+<p class="p1">.bts-item:hover .bts-ph{opacity:.12;transform:scale(1.03);}</p>
+<p class="p1">.bts-caption{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:absolute;bottom:0;left:0;right:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(to top,rgba(6,4,2,.85),transparent);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:20px;font-size:9px;letter-spacing:.2em;color:var(--beige-dim);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform:translateY(4px);transition:transform .3s;</p>
+<p class="p1">}</p>
+<p class="p1">.bts-item:hover .bts-caption{transform:translateY(0);}</p>
+<p class="p2"><br></p>
+<p class="p1">/* =================== CONTACTO =================== */</p>
+<p class="p1">#contacto-page{background:var(--brown);}</p>
+<p class="p1">.contact-hero{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:140px 48px 80px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(160deg,var(--brown) 0%,#2A1208 100%);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position:relative;overflow:hidden;</p>
+<p class="p1">}</p>
+<p class="p1">.contact-hero::before{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>content:'';position:absolute;inset:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:repeating-linear-gradient(-45deg,transparent 0px,transparent 40px,rgba(245,237,214,.018) 40px,rgba(245,237,214,.018) 41px);</p>
+<p class="p1">}</p>
+<p class="p1">.contact-title{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Bebas Neue',cursive;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:clamp(56px,10vw,130px);color:var(--beige);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height:.88;position:relative;z-index:1;margin-bottom:64px;</p>
+<p class="p1">}</p>
+<p class="p1">.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;position:relative;z-index:1;}</p>
+<p class="p1">.c-info-label{font-size:9px;letter-spacing:.25em;color:rgba(245,237,214,.45);margin-bottom:8px;}</p>
+<p class="p1">.c-info-val{font-size:13px;letter-spacing:.07em;color:var(--beige);text-decoration:none;display:block;margin-bottom:36px;transition:opacity .3s;}</p>
+<p class="p1">.c-info-val:hover{opacity:.65;}</p>
+<p class="p2"><br></p>
+<p class="p1">/* FORM */</p>
+<p class="p1">.contact-form{background:var(--black);padding:80px 48px;}</p>
+<p class="p1">.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;margin:0 auto;}</p>
+<p class="p1">.form-group{display:flex;flex-direction:column;gap:8px;}</p>
+<p class="p1">.form-group.full{grid-column:span 2;}</p>
+<p class="p1">.form-label{font-size:9px;letter-spacing:.2em;color:var(--beige-dim);}</p>
+<p class="p1">.form-input,.form-select,.form-textarea{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:var(--mid);border:1px solid rgba(245,237,214,.1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--beige);font-family:'Space Mono',monospace;font-size:11px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:14px 16px;outline:none;transition:border-color .3s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>letter-spacing:.05em;</p>
+<p class="p1">}</p>
+<p class="p1">.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:rgba(245,237,214,.4);}</p>
+<p class="p1">.form-select{cursor:none;}</p>
+<p class="p1">.form-select option{background:var(--dark);}</p>
+<p class="p1">.form-textarea{resize:vertical;min-height:120px;}</p>
+<p class="p1">.form-submit{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid-column:span 2;display:flex;justify-content:flex-end;margin-top:8px;</p>
+<p class="p1">}</p>
+<p class="p1">.form-btn{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:var(--brown);color:var(--beige);border:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:16px 40px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:'Space Mono',monospace;cursor:none;transition:background .3s,gap .3s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;align-items:center;gap:10px;</p>
+<p class="p1">}</p>
+<p class="p1">.form-btn:hover{background:var(--brown-mid);gap:16px;}</p>
+<p class="p1">.form-btn::after{content:'→';}</p>
+<p class="p1">.form-success{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:none;grid-column:span 2;text-align:center;padding:32px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(61,31,13,.3);border:1px solid rgba(245,237,214,.1);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* =================== FOOTER =================== */</p>
+<p class="p1">footer{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:var(--black);padding:36px 48px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:flex;align-items:center;justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-top:1px solid var(--beige-faint);</p>
+<p class="p1">}</p>
+<p class="p1">.f-brand{font-family:'Bebas Neue',cursive;font-size:16px;letter-spacing:.25em;color:var(--beige);}</p>
+<p class="p1">.f-copy{font-size:9px;letter-spacing:.15em;color:rgba(245,237,214,.2);}</p>
+<p class="p1">.f-links{display:flex;gap:28px;}</p>
+<p class="p1">.f-links a{font-size:9px;letter-spacing:.15em;color:rgba(245,237,214,.28);text-decoration:none;transition:color .3s;}</p>
+<p class="p1">.f-links a:hover{color:var(--beige);}</p>
+<p class="p2"><br></p>
+<p class="p1">/* REVEAL ANIMATIONS */</p>
+<p class="p1">.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;}</p>
+<p class="p1">.reveal.in{opacity:1;transform:translateY(0);}</p>
+<p class="p2"><br></p>
+<p class="p1">/* HERO ANIMS */</p>
+<p class="p1">.hero-tag{animation:fadeUp .7s ease .2s both;}</p>
+<p class="p1">.hero-title{animation:fadeUp .7s ease .4s both;}</p>
+<p class="p1">.hero-sub{animation:fadeUp .7s ease .55s both;}</p>
+<p class="p1">.hero-actions{animation:fadeUp .7s ease .7s both;}</p>
+<p class="p1">@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}</p>
+<p class="p2"><br></p>
+<p class="p1">/* BACK BTN */</p>
+<p class="p1">.back-btn{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:inline-flex;align-items:center;gap:10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:10px;letter-spacing:.18em;color:var(--beige-dim);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-decoration:none;cursor:none;transition:color .3s,gap .3s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:32px;</p>
+<p class="p1">}</p>
+<p class="p1">.back-btn:hover{color:var(--beige);gap:6px;}</p>
+<p class="p1">.back-btn::before{content:'←';}</p>
+<p class="p2"><br></p>
+<p class="p1">/* SECTION LABEL + TITLE */</p>
+<p class="p1">.s-label{font-size:9px;letter-spacing:.28em;color:var(--red);margin-bottom:16px;}</p>
+<p class="p1">.s-title{font-family:'Bebas Neue',cursive;font-size:clamp(44px,6.5vw,80px);color:var(--beige);line-height:1;margin-bottom:48px;}</p>
+<p class="p2"><br></p>
+<p class="p1">/* SEPARATOR */</p>
+<p class="p1">.sep{height:1px;background:var(--beige-faint);margin:0 48px;}</p>
+<p class="p2"><br></p>
+<p class="p1">/* MEDIA RESPONSIVE */</p>
+<p class="p1">@media(max-width:768px){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>nav{padding:20px 24px;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-left{display:none;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>section,.hero,.services-overview,.cat-section,footer{padding-left:24px;padding-right:24px;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-content{max-width:100%;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hero-frame{display:none;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.so-grid{grid-template-columns:1fr;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.proj-grid{grid-template-columns:1fr 1fr;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.proj-grid.col2{grid-template-columns:1fr;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.proj-card.wide{grid-column:span 1;aspect-ratio:4/3;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-grid,.form-grid{grid-template-columns:1fr;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.form-group.full{grid-column:span 1;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.form-submit{grid-column:span 1;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.pd-meta{flex-direction:column;gap:24px;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bts-item:nth-child(1){grid-column:span 12;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.bts-item:nth-child(n+2){grid-column:span 6;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.talent-grid{grid-template-columns:1fr;}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.ow-card{width:260px;height:180px;}</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="cursor" id="cur"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ===== NAV ===== --&gt;</p>
+<p class="p1">&lt;nav id="main-nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#" onclick="showPage('agencia');return false;" id="nav-agencia"&gt;[ AGENCIA ]&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#" onclick="showPage('bts-page');return false;" id="nav-bts"&gt;BTS&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#" onclick="showPage('home');return false;" id="nav-home"&gt;INICIO&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="#" class="nav-logo" onclick="showPage('home');return false;"&gt;ADVENTURE FILMS&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#" onclick="showPage('contacto-page');return false;" class="nav-cta"&gt;→ CONTACTO&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;!-- PAGE: HOME --&gt;</p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;div class="page active" id="home"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- HERO --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-bg"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-scanlines"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-frame"&gt;&lt;div class="hero-frame-inner"&gt;AF&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-tag"&gt;[ PRODUCTORA AUDIOVISUAL · PANAMÁ ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1 class="hero-title"&gt;ADVENTURE&lt;br&gt;FILMS&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="hero-sub"&gt;Creamos contenido visual que mueve personas y marcas.&lt;br&gt;Desde Boquete al mundo — con intención y calidad cinematográfica.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" class="btn-primary" onclick="showPage('agencia');return false;"&gt;VER PROYECTOS&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" class="btn-ghost" onclick="showPage('contacto-page');return false;"&gt;INICIAR PROYECTO&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-scroll"&gt;SCROLL&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- SERVICES OVERVIEW --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="services-overview"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="s-label"&gt;[ LO QUE HACEMOS ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="s-title"&gt;Servicios&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="so-grid reveal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="so-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-num"&gt;01&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-icon"&gt;🎥&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-title"&gt;Video &amp; Reels&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-desc"&gt;Contenido para redes, videoclips, documentales, publicidad y material institucional. Producción completa desde el concepto hasta la entrega.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" class="so-link" onclick="showPage('agencia');setCat('video');return false;"&gt;EXPLORAR&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="so-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-num"&gt;02&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-icon"&gt;📸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-title"&gt;Fotografía&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-desc"&gt;Retratos, quinceañeras, bienes raíces, eventos, fotografía de producto y editorial. Imágenes que comunican con impacto visual.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" class="so-link" onclick="showPage('agencia');setCat('foto');return false;"&gt;EXPLORAR&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="so-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-num"&gt;03&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-icon"&gt;📱&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-title"&gt;Community Manager&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="so-desc"&gt;Gestión integral de redes sociales. Calendario de contenido, publicaciones, estrategia de crecimiento y atención a tu comunidad digital.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" class="so-link" onclick="showPage('agencia');setCat('social');return false;"&gt;EXPLORAR&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- FOOTER HOME --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-brand"&gt;ADVENTURE FILMS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-copy"&gt;© 2026 Adventure Films Production · Panamá, Boquete&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://instagram.com/adventurefilmsproduction" target="_blank"&gt;INSTAGRAM&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="mailto:adventurefilms.contact@gmail.com"&gt;EMAIL&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://wa.me/50766561952" target="_blank"&gt;WHATSAPP&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;!-- PAGE: AGENCIA --&gt;</p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;div class="page" id="agencia"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="page-hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="page-hero-label"&gt;[ AGENCIA ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1 class="page-hero-title"&gt;NUESTRO&lt;br&gt;TRABAJO&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="page-hero-sub"&gt;Exploramos nuevas formas del storytelling visual para marcas, negocios y personas. Todo bajo el mismo techo.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- CATEGORY NAV --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cat-nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat-btn active" onclick="setCat('video')"&gt;VIDEO&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat-btn" onclick="setCat('foto')"&gt;FOTOGRAFÍA&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat-btn" onclick="setCat('social')"&gt;SOCIAL MEDIA&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat-btn" onclick="setCat('bienes')"&gt;BIENES RAÍCES&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cat-btn" onclick="setCat('eventos')"&gt;EVENTOS &amp; 15 AÑOS&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- VIDEO --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cat-section active" id="cat-video"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="s-label"&gt;[ PRODUCCIÓN DE VIDEO ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="proj-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card wide" onclick="showProject('boquete')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(135deg,#1A0A06,#3D1F0D)"&gt;🏔️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;BOQUETE ADVENTURE&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;DOCUMENTAL · 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="proj-cta"&gt;VER PROYECTO&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card" onclick="showProject('specialty')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(135deg,#06101a,#0d2535)"&gt;🧗&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;SPECIALTY PINCH&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;REEL · CONTENIDO DE MARCA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="proj-cta"&gt;VER PROYECTO&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card" onclick="showProject('escalada')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(135deg,#0a1a08,#0d2a10)"&gt;🌿&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;ESCALADA · 20 AÑOS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;DOCUMENTAL CORTO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="proj-cta"&gt;VER PROYECTO&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="upload-zone" id="upload-video"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="uz-icon"&gt;🎬&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;¿Tienes un video o proyecto? Súbelo aquí&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="upload-btn" onclick="document.getElementById('vid-file').click()"&gt;SUBIR VIDEO&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="file" id="vid-file" accept="video/*,image/*" style="display:none" onchange="handleUpload(this,'video')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="uploaded-video" style="margin-top:4px;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- FOTO --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cat-section" id="cat-foto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="s-label"&gt;[ FOTOGRAFÍA PROFESIONAL ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="proj-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card tall"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(160deg,#1a0814,#0a0308)"&gt;👤&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;RETRATOS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;FOTOGRAFÍA DE PERSONA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card" style="aspect-ratio:4/3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(160deg,#0a1a08,#030a05)"&gt;🌿&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;NATURALEZA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;EDITORIAL · PAISAJE&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card" style="aspect-ratio:4/3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(160deg,#0d0a1a,#050310)"&gt;✨&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;QUINCEAÑERAS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;FOTOGRAFÍA DE EVENTO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card tall"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(160deg,#1a1208,#0a0805)"&gt;🎭&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;EDITORIAL&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;MODA · PRODUCTO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="upload-zone" style="margin-top:4px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="uz-icon"&gt;📸&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Sube tus fotografías de portafolio&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="upload-btn" onclick="document.getElementById('foto-file').click()"&gt;SUBIR FOTOS&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="file" id="foto-file" accept="image/*" multiple style="display:none" onchange="handleUpload(this,'foto')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="uploaded-foto" style="margin-top:4px;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- SOCIAL --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cat-section" id="cat-social"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="s-label"&gt;[ SOCIAL MEDIA &amp; COMMUNITY MANAGER ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="padding:48px 0;border-top:1px solid var(--beige-faint);border-bottom:1px solid var(--beige-faint);margin-bottom:48px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-family:'Bebas Neue',cursive;font-size:28px;color:var(--beige);margin-bottom:12px;"&gt;GESTIÓN DE REDES&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:11px;line-height:2;color:var(--beige-dim);"&gt;Instagram, TikTok, Facebook. Publicaciones diarias, stories, reels y análisis de métricas.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-family:'Bebas Neue',cursive;font-size:28px;color:var(--beige);margin-bottom:12px;"&gt;CONTENIDO MENSUAL&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:11px;line-height:2;color:var(--beige-dim);"&gt;Calendario de contenido, diseño gráfico, copywriting y estrategia de hashtags.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-family:'Bebas Neue',cursive;font-size:28px;color:var(--beige);margin-bottom:12px;"&gt;CRECIMIENTO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:11px;line-height:2;color:var(--beige-dim);"&gt;Estrategia de crecimiento orgánico, colaboraciones y engagement con tu comunidad.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="proj-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card wide"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(135deg,#0a0614,#1a0a28)"&gt;📱&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;INSTAGRAM · REELS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;CONTENIDO PARA REDES SOCIALES&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(135deg,#0a1206,#1a2a0a)"&gt;📊&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;ESTRATEGIA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;COMMUNITY MANAGEMENT&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- BIENES RAICES --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cat-section" id="cat-bienes"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="s-label"&gt;[ FOTOGRAFÍA &amp; VIDEO DE BIENES RAÍCES ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin-bottom:48px;font-size:12px;line-height:2;color:var(--beige-dim);max-width:600px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Imágenes y videos que venden propiedades. Fotografía interior y exterior, tours virtuales, drones y material para portales inmobiliarios.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="proj-grid col2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card" style="aspect-ratio:16/9"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(135deg,#0a1208,#14201a)"&gt;🏠&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;RESIDENCIAL&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;FOTOGRAFÍA INTERIOR · EXTERIOR&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card" style="aspect-ratio:16/9"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(135deg,#0a0a12,#141428)"&gt;🏢&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;COMERCIAL&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;VIDEO TOUR · DRONE&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="upload-zone" style="margin-top:4px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="uz-icon"&gt;🏡&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Sube fotos de propiedades para tu portafolio&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="upload-btn" onclick="document.getElementById('br-file').click()"&gt;SUBIR IMÁGENES&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="file" id="br-file" accept="image/*,video/*" multiple style="display:none" onchange="handleUpload(this,'bienes')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="uploaded-bienes" style="margin-top:4px;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- EVENTOS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cat-section" id="cat-eventos"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="s-label"&gt;[ EVENTOS · QUINCEAÑERAS · BODAS ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin-bottom:48px;font-size:12px;line-height:2;color:var(--beige-dim);max-width:600px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Capturamos los momentos más especiales de tu vida. Quinceañeras, bodas, graduaciones y todo evento que merece ser recordado con calidad cinematográfica.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="proj-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card tall"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(160deg,#1a0814,#0a0318)"&gt;💃&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;QUINCEAÑERAS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;FOTO &amp; VIDEO · EVENTO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card" style="aspect-ratio:4/3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(160deg,#1a1408,#0a0803)"&gt;💍&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;BODAS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;CINEMATOGRAFÍA · FOTO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card" style="aspect-ratio:4/3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(160deg,#081a0a,#030a04)"&gt;🎓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;GRADUACIONES&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;FOTOGRAFÍA · VIDEO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="proj-card tall"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-placeholder" style="background:linear-gradient(160deg,#0a0814,#030408)"&gt;🎉&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proj-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-name"&gt;CORPORATIVOS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proj-type"&gt;EVENTOS EMPRESARIALES&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="upload-zone" style="margin-top:4px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="uz-icon"&gt;🎊&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Sube fotos y videos de eventos para tu portafolio&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="upload-btn" onclick="document.getElementById('ev-file').click()"&gt;SUBIR CONTENIDO&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="file" id="ev-file" accept="image/*,video/*" multiple style="display:none" onchange="handleUpload(this,'eventos')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="uploaded-eventos" style="margin-top:4px;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-brand"&gt;ADVENTURE FILMS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-copy"&gt;© 2026 · Panamá&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://instagram.com/adventurefilmsproduction" target="_blank"&gt;IG&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="mailto:adventurefilms.contact@gmail.com"&gt;EMAIL&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://wa.me/50766561952" target="_blank"&gt;WA&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;!-- PAGE: PROJECT DETAIL --&gt;</p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;div class="page" id="project-detail"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div style="padding:120px 48px 40px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="#" class="back-btn" onclick="showPage('agencia');return false;"&gt;VOLVER A PROYECTOS&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pd-tag" id="pd-tag"&gt;[ DOCUMENTAL ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1 class="pd-title" id="pd-title"&gt;BOQUETE ADVENTURE&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pd-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pd-meta-item"&gt;&lt;div class="pd-meta-label"&gt;DIRECTOR&lt;/div&gt;&lt;div class="pd-meta-value" id="pd-director"&gt;Joshua Robles&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pd-meta-item"&gt;&lt;div class="pd-meta-label"&gt;CLIENTE&lt;/div&gt;&lt;div class="pd-meta-value" id="pd-client"&gt;Adventure Films&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pd-meta-item"&gt;&lt;div class="pd-meta-label"&gt;AÑO&lt;/div&gt;&lt;div class="pd-meta-value" id="pd-year"&gt;2026&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- GALLERY HORIZONTAL SCROLL --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="pd-gallery" id="pd-gallery"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pd-gallery-item"&gt;&lt;div class="pd-gallery-placeholder" style="background:linear-gradient(135deg,#1A0A06,#3D1F0D)"&gt;🏔️&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pd-gallery-item"&gt;&lt;div class="pd-gallery-placeholder" style="background:linear-gradient(135deg,#06101a,#0d2535)"&gt;🧗&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pd-gallery-item"&gt;&lt;div class="pd-gallery-placeholder" style="background:linear-gradient(135deg,#0a1a08,#0d2a10)"&gt;🌿&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pd-gallery-item"&gt;&lt;div class="pd-gallery-placeholder" style="background:linear-gradient(135deg,#1a0814,#0a0318)"&gt;📸&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- APPROACH --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="pd-approach"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;Nuestro Enfoque&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="pd-approach-text" id="pd-approach"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Creemos en el poder de las historias auténticas. Cada proyecto comienza con una visión clara — entendemos a fondo la marca, el mensaje y el público antes de encender la cámara. El resultado es contenido que no solo se ve bien, sino que conecta emocionalmente con las personas.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://wa.me/50766561952" class="btn-primary" target="_blank" style="display:inline-flex;"&gt;INICIAR UN PROYECTO SIMILAR&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- OTHER WORKS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="other-works"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;Otros Trabajos&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ow-grid" id="ow-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ow-card" onclick="showProject('specialty')" style="background:linear-gradient(135deg,#06101a,#0d2535)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ow-placeholder"&gt;🧗&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ow-label"&gt;SPECIALTY PINCH&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ow-card" onclick="showProject('escalada')" style="background:linear-gradient(135deg,#0a1a08,#0d2a10)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ow-placeholder"&gt;🌿&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ow-label"&gt;ESCALADA · 20 AÑOS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-brand"&gt;ADVENTURE FILMS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-copy"&gt;© 2026 · Panamá&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://instagram.com/adventurefilmsproduction" target="_blank"&gt;IG&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="mailto:adventurefilms.contact@gmail.com"&gt;EMAIL&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;!-- PAGE: BTS --&gt;</p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;div class="page" id="bts-page"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div style="padding:140px 48px 40px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="s-label"&gt;[ DETRÁS DE CÁMARAS ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1 class="s-title"&gt;Behind The Scenes&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p style="font-size:11px;line-height:2;color:var(--beige-dim);max-width:500px;"&gt;El proceso detrás de cada producción. Así es como trabaja Adventure Films — con pasión, creatividad y atención al detalle en cada toma.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="bts-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bts-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-ph" style="background:linear-gradient(135deg,#1a0a06,#3d1f0d)"&gt;🎬&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-caption"&gt;SET · BOQUETE&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bts-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-ph" style="background:linear-gradient(135deg,#06101a,#0d2535)"&gt;🎥&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-caption"&gt;CONFIGURANDO CÁMARA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bts-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-ph" style="background:linear-gradient(135deg,#0a1a08,#0d2a10)"&gt;🧗&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-caption"&gt;PRODUCCIÓN EN CAMPO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bts-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-ph" style="background:linear-gradient(135deg,#1a0814,#0a0318)"&gt;💻&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-caption"&gt;POST PRODUCCIÓN&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bts-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-ph" style="background:linear-gradient(135deg,#1a1408,#2a1f08)"&gt;🎞️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-caption"&gt;SELECCIÓN DE TOMAS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bts-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-ph" style="background:linear-gradient(135deg,#0a0614,#161028)"&gt;🏔️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-caption"&gt;LOCACIÓN · AVENTURA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bts-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-ph" style="background:linear-gradient(135deg,#061a0a,#0a2a12)"&gt;🌅&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bts-caption"&gt;GOLDEN HOUR&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div style="padding:40px 48px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="upload-zone"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="uz-icon"&gt;🎬&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Sube tu contenido BTS aquí&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="upload-btn" onclick="document.getElementById('bts-file').click()"&gt;SUBIR BTS&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="file" id="bts-file" accept="image/*,video/*" multiple style="display:none" onchange="handleUpload(this,'bts')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="uploaded-bts" style="margin-top:4px;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-brand"&gt;ADVENTURE FILMS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-copy"&gt;© 2026 · Panamá&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://instagram.com/adventurefilmsproduction" target="_blank"&gt;IG&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="mailto:adventurefilms.contact@gmail.com"&gt;EMAIL&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;!-- PAGE: CONTACTO --&gt;</p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;div class="page" id="contacto-page"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="contact-hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1 class="contact-title"&gt;¿TIENES UN&lt;br&gt;PROYECTO?&lt;br&gt;HABLEMOS.&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="contact-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="c-info-label"&gt;CORREO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="mailto:adventurefilms.contact@gmail.com" class="c-info-val"&gt;adventurefilms.contact@gmail.com&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="c-info-label"&gt;WHATSAPP&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://wa.me/50766561952" class="c-info-val" target="_blank"&gt;+507 6656 1952&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="c-info-label"&gt;INSTAGRAM&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://instagram.com/adventurefilmsproduction" class="c-info-val" target="_blank"&gt;@adventurefilmsproduction&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-size:12px;line-height:2.2;color:rgba(245,237,214,.55);letter-spacing:.04em;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Productora audiovisual con base en Panamá, disponibles en todo el mundo. Especializados en contenido para redes sociales, fotografía profesional, videoclips, documentales, bienes raíces y community management.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://wa.me/50766561952" class="btn-primary" target="_blank" style="margin-top:28px;display:inline-flex;"&gt;ESCRIBIR POR WHATSAPP&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="contact-form"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="max-width:800px;margin:0 auto 48px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="s-label"&gt;[ FORMULARIO DE CONTACTO ]&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="s-title"&gt;Cuéntanos tu proyecto&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="form-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="form-label"&gt;NOMBRE COMPLETO&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" class="form-input" placeholder="Tu nombre"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="form-label"&gt;CORREO ELECTRÓNICO&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="email" class="form-input" placeholder="tu@email.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="form-label"&gt;WHATSAPP / TELÉFONO&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="tel" class="form-input" placeholder="+507 ..."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="form-label"&gt;TIPO DE SERVICIO&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;select class="form-select" id="form-service"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value=""&gt;Seleccionar...&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;Video &amp; Reels&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;Fotografía de personas&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;Quinceañera / Evento&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;Bienes Raíces&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;Community Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;Documental&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;Publicidad / Comercial&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;Otro&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="form-group full"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="form-label"&gt;CUÉNTANOS TU PROYECTO&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;textarea class="form-textarea" placeholder="Describe tu idea, qué necesitas y cuándo..."&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="form-submit"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="form-btn" onclick="submitForm()"&gt;ENVIAR MENSAJE&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="form-success" id="form-success"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="font-family:'Bebas Neue',cursive;font-size:32px;color:var(--beige);margin-bottom:12px;"&gt;¡MENSAJE RECIBIDO!&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="font-size:11px;color:var(--beige-dim);"&gt;Nos pondremos en contacto contigo en menos de 24 horas.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-brand"&gt;ADVENTURE FILMS&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-copy"&gt;© 2026 Adventure Films Production · Panamá&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="f-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://instagram.com/adventurefilmsproduction" target="_blank"&gt;INSTAGRAM&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="mailto:adventurefilms.contact@gmail.com"&gt;EMAIL&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://wa.me/50766561952" target="_blank"&gt;WHATSAPP&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;!-- SCRIPTS --&gt;</p>
+<p class="p1">&lt;!-- ============================================ --&gt;</p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">// CURSOR</p>
+<p class="p1">const cur = document.getElementById('cur');</p>
+<p class="p1">document.addEventListener('mousemove', e =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cur.style.left = e.clientX + 'px';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cur.style.top = e.clientY + 'px';</p>
+<p class="p1">});</p>
+<p class="p1">document.querySelectorAll('a,button,.proj-card,.so-card,.bts-item,.ow-card').forEach(el =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.addEventListener('mouseenter', () =&gt; cur.classList.add('big'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.addEventListener('mouseleave', () =&gt; cur.classList.remove('big'));</p>
+<p class="p1">});</p>
+<p class="p2"><br></p>
+<p class="p1">// PAGE NAVIGATION</p>
+<p class="p1">function showPage(id) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.page').forEach(p =&gt; p.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const page = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(page) { page.classList.add('active'); window.scrollTo(0,0); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// update nav active states</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.nav-left a').forEach(a =&gt; a.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const map = {agencia:'nav-agencia','bts-page':'nav-bts',home:'nav-home','project-detail':'nav-agencia'};</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(map[id]) { const el = document.getElementById(map[id]); if(el) el.classList.add('active'); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>triggerReveal();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// CATEGORY NAVIGATION</p>
+<p class="p1">function setCat(cat) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.cat-section').forEach(s =&gt; s.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.cat-btn').forEach(b =&gt; b.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const section = document.getElementById('cat-' + cat);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(section) section.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const btns = document.querySelectorAll('.cat-btn');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const map = {video:0,foto:1,social:2,bienes:3,eventos:4};</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(map[cat] !== undefined &amp;&amp; btns[map[cat]]) btns[map[cat]].classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// If called from home, also switch to agencia page</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(!document.getElementById('agencia').classList.contains('active')) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>showPage('agencia');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// PROJECT DATA</p>
+<p class="p1">const projects = {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>boquete: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tag:'[ DOCUMENTAL DE AVENTURA ]', title:'BOQUETE\nADVENTURE',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>director:'Joshua Robles', client:'Adventure Films', year:'2026',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>approach:'Salimos a las montañas de Boquete con una idea clara: mostrar la aventura tal como es. Sin artificios. Filmamos con un equipo de dos personas, adaptando cada toma a lo que la naturaleza nos ofrecía. El resultado es un documento visual auténtico de uno de los destinos más espectaculares de Panamá.',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>others:[{id:'specialty',name:'SPECIALTY PINCH',bg:'linear-gradient(135deg,#06101a,#0d2535)',icon:'🧗'},{id:'escalada',name:'ESCALADA',bg:'linear-gradient(135deg,#0a1a08,#0d2a10)',icon:'🌿'}]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>specialty: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tag:'[ CONTENIDO DE MARCA ]', title:'SPECIALTY\nPINCH',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>director:'Jhonatan Fuentes', client:'Specialty Pinch', year:'2026',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>approach:'Un cliente con una identidad fuerte necesitaba contenido que estuviera a la altura. Desarrollamos un concepto visual desde cero, filmamos en una sola jornada y entregamos material listo para publicar en 48 horas. El video generó un crecimiento orgánico significativo en sus redes sociales.',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>others:[{id:'boquete',name:'BOQUETE ADVENTURE',bg:'linear-gradient(135deg,#1a0a06,#3d1f0d)',icon:'🏔️'},{id:'escalada',name:'ESCALADA',bg:'linear-gradient(135deg,#0a1a08,#0d2a10)',icon:'🌿'}]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>escalada: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tag:'[ DOCUMENTAL CORTO ]', title:'ESCALADA\n20 AÑOS',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>director:'Joshua Robles', client:'Proyecto Personal', year:'2026',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>approach:'Veinte años escalando las mismas rocas en Boquete. Este cortometraje documental sigue a un escalador local y su relación con la piedra a lo largo de dos décadas. Una historia de dedicación, naturaleza y comunidad contada a través de imágenes cargadas de significado.',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>others:[{id:'boquete',name:'BOQUETE ADVENTURE',bg:'linear-gradient(135deg,#1a0a06,#3d1f0d)',icon:'🏔️'},{id:'specialty',name:'SPECIALTY PINCH',bg:'linear-gradient(135deg,#06101a,#0d2535)',icon:'🧗'}]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">function showProject(id) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const p = projects[id];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(!p) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('pd-tag').textContent = p.tag;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('pd-title').innerHTML = p.title.replace('\n','&lt;br&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('pd-director').textContent = p.director;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('pd-client').textContent = p.client;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('pd-year').textContent = p.year;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('pd-approach').textContent = p.approach;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const owGrid = document.getElementById('ow-grid');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>owGrid.innerHTML = p.others.map(o =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="ow-card" onclick="showProject('${o.id}')" style="background:${o.bg}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ow-placeholder"&gt;${o.icon}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="ow-label"&gt;${o.name}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>`).join('');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>showPage('project-detail');</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// FILE UPLOAD</p>
+<p class="p1">function handleUpload(input, zone) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const container = document.getElementById('uploaded-' + zone);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(!container) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>Array.from(input.files).forEach(file =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const url = URL.createObjectURL(file);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>div.className = 'proj-card';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>div.style.cssText = 'aspect-ratio:4/3;';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(file.type.startsWith('video/')) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.innerHTML = `&lt;video src="${url}" class="proj-thumb" autoplay muted loop playsinline&gt;&lt;/video&gt;&lt;div class="proj-info"&gt;&lt;div class="proj-name"&gt;${file.name.split('.')[0].toUpperCase()}&lt;/div&gt;&lt;div class="proj-type"&gt;VIDEO&lt;/div&gt;&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.innerHTML = `&lt;img src="${url}" class="proj-thumb" alt="${file.name}"&gt;&lt;div class="proj-info"&gt;&lt;div class="proj-name"&gt;${file.name.split('.')[0].toUpperCase()}&lt;/div&gt;&lt;div class="proj-type"&gt;FOTOGRAFÍA&lt;/div&gt;&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>container.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>input.value = '';</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// FORM SUBMIT</p>
+<p class="p1">function submitForm() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('form-success').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>setTimeout(() =&gt; document.getElementById('form-success').style.display = 'none', 5000);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// SCROLL REVEAL</p>
+<p class="p1">function triggerReveal() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const reveals = document.querySelectorAll('.reveal:not(.in)');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const observer = new IntersectionObserver(entries =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>entries.forEach(e =&gt; { if(e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); }});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>},{threshold:0.1});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>reveals.forEach(r =&gt; observer.observe(r));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}, 100);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// INIT</p>
+<p class="p1">triggerReveal();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
